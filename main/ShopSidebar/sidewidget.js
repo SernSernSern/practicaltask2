@@ -5,11 +5,11 @@ import './index.styl'
 
 const Sidewidget = ({text, data}) => {
 
-    return pug`
-        View.divside
-            Text.text=text
-            View=data
-    `
+  return pug`
+    View.side-widget.d
+      Text.side-widget.text=text
+      View=data
+  `
 }
 
 

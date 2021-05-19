@@ -6,23 +6,22 @@ import './index.styl'
 
 
 const Stardiv = (num) => {
-    return pug`
-        - var n = 1
-        - var k = num
-        View.stardiv
-            while n <= 5
-                if n <= k.num
-                    FontAwesomeIcon.starright(
-                        icon=faStar
-                        color='#ee3333'
-                    )
-                else 
-                    FontAwesomeIcon.starright(
-                        icon=faStar
-                        
-                    )
-                - n++
-    `
+  return pug`
+    - var n = 1
+    - var k = num
+    View.stardiv.di
+      while n <= 5
+        if n <= k.num
+          FontAwesomeIcon.stardiv.starright(
+            icon=faStar
+            color='#ee3333'
+          )
+        else 
+          FontAwesomeIcon.stardiv.starright(
+            icon=faStar
+          )
+        - n++
+  `
 }
 
 

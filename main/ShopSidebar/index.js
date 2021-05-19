@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity, Picker} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import { BASE_URL } from '@env'
 import './index.styl'
 import Sidewidget from './sidewidget'
@@ -9,84 +9,84 @@ import { faGripLines } from '@fortawesome/free-solid-svg-icons'
 import Toprated from './toprated'
 
 const ShopSidebar = prop => {
-    const url = '/breadcrumb.jpg'
+  const url = '/breadcrumb.jpg'
 
-    const base = BASE_URL
+  const base = BASE_URL
 
-    const searchbar = pug`
-        View.divrow
-            TextInput.input
-            TouchableOpacity.button(
-                color="#dedede"
-            )
-                FontAwesomeIcon(
-                    icon=faSearch
-                    color='#dc3545'
-                    size = 24
-                )       
 
-    `;
+  const searchbar = pug`
+    View.main.divrow
+      TextInput.main.input
+      TouchableOpacity.main.button(
+        color="#dedede"
+      )
+        FontAwesomeIcon(
+          icon=faSearch
+          color='#dc3545'
+          size = 24
+        )   
+  `;
 
-    const category = pug`
-        View
-            View.category
-                Text.categorytext Accessories
-                Text.categorytext 4
-            View.category
-                Text.categorytext Book
-                Text.categorytext 9
-            View.category
-                Text.categorytext Clothing
-                Text.categorytext 5
-            View.category
-                Text.categorytext Homelife
-                Text.categorytext 3
-            View.category
-                Text.categorytext Kids & Baby
-                Text.categorytext 4
-                    
-    `;
 
-    const color = pug`
-        View.color
-            View.colorcircle.red
-            View.colorcircle.pink
-            View.colorcircle.blue
-            View.colorcircle.sky
-            View.colorcircle.green
-            View.colorcircle.purple
-    `;
+  const category = pug`
+    View
+      View.main.category
+        Text.main.text Accessories
+        Text.main.text 4
+      View.main.category
+        Text.main.text Book
+        Text.main.text 9
+      View.main.category
+        Text.main.text Clothing
+        Text.main.text 5
+      View.main.category
+        Text.main.text Homelife
+        Text.main.text 3
+      View.main.category
+        Text.main.text Kids & Baby
+        Text.main.text 4
+  `;
 
-    const size = pug`
-        View.size
-            Text.categorytext XL
-            Text.categorytext M
-            Text.categorytext L
-            Text.categorytext ML
-            Text.categorytext LM
-    `;
+  const color = pug`
+    View.main.color
+      View.main.circlecolor.red
+      View.main.circlecolor.pink
+      View.main.circlecolor.blue
+      View.main.circlecolor.sky
+      View.main.circlecolor.green
+      View.main.circlecolor.purple
+  `;
 
-    return pug`
-            View.div
-                View
-                    Sidewidget.sidebar-widget(
-                        text="Search Products"
-                        data=searchbar
-                    )
-                    Sidewidget.sidebar-widget(
-                        text="Categories"
-                        data=category
-                    )
-                    Sidewidget.sidebar-widget(
-                        text="color"
-                        data=color
-                    )
-                    Sidewidget.sidebar-widget(
-                        text="size"
-                        data=size 
-                    )
-                    Toprated
-    `
+  const size = pug`
+    View.main.size
+      Text.main.text XL
+      Text.main.text M
+      Text.main.text L
+      Text.main.text ML
+      Text.main.text LM
+  `;
+
+  return pug`
+    View.main.div
+      View
+        Sidewidget.main.sidebar-widget(
+          text="Search Products"
+          data=searchbar
+        )
+        Sidewidget.main.sidebar-widget(
+          text="Categories"
+          data=category
+        )
+        Sidewidget.main.sidebar-widget(
+          text="color"
+          data=color
+        )
+        Sidewidget.main.sidebar-widget(
+          text="size"
+          data=size 
+        )
+        Toprated
+  `
 }
 
 

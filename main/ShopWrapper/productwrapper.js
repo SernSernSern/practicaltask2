@@ -22,26 +22,25 @@ const some = [
 
 const Productwrapper = param => {
 
-    const base = BASE_URL
+  const base = BASE_URL
 
-    return pug`
-        View.cards
-            each card in some
-                View.card
-                    View.singleproduct
-                        View
-                            Image.shopimage(
-                                source = {uri: base + card.pic}
-                            
-                            )
-                        View.prod
-                            View
-                                Text.prodtext=card.title
-                            View
-                                Text.prodtextred=card.cost
-                        View.productcart
-                            Text.productcarttext=card.type          
-    `
+  return pug`
+    View.product.cards
+      each card in some
+        View.product.card
+          View.product.single
+            View
+              Image.product.cardimage(
+                source = {uri: base + card.pic}
+              )
+            View.product.prod
+              View
+                Text.product.text=card.title
+              View
+                Text.product.text.red=card.cost
+              View.productcart
+                Text.product.text=card.type 
+  `
 }
 
 
