@@ -9,13 +9,13 @@ const Header = prop => {
   const base = BASE_URL
 
   return pug`
-    ImageBackground.header.image(
+    ImageBackground.header(styleName='image')(
       source = {uri: base + url}
     )
-      View.header.div
+      View.header(styleName='div')
         View
-          Text.header.text Shop
-          Text.header.smaltext HOME / SHOP  
+          Text.header(styleName='text') Shop
+          Text.header(styleName='smaltext') HOME / SHOP  
   `
 }
 

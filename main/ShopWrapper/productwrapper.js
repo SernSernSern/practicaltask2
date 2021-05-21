@@ -25,21 +25,21 @@ const Productwrapper = param => {
   const base = BASE_URL
 
   return pug`
-    View.product.cards
+    View.product(styleName='cards')
       each card in some
-        View.product.card
-          View.product.single
+        View.product(styleName='card')
+          View.product(styleName='single')
             View
-              Image.product.cardimage(
+              Image.product(styleName='cardimage')(
                 source = {uri: base + card.pic}
               )
-            View.product.prod
+            View.product(styleName='prod')
               View
-                Text.product.text=card.title
+                Text.product(styleName='text')=card.title
               View
-                Text.product.text.red=card.cost
+                Text.product(styleName='text red')=card.cost
               View.productcart
-                Text.product.text=card.type 
+                Text.product(styleName='text')=card.type 
   `
 }
 

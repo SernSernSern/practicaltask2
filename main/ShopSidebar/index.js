@@ -15,9 +15,9 @@ const ShopSidebar = prop => {
 
 
   const searchbar = pug`
-    View.main.divrow
-      TextInput.main.input
-      TouchableOpacity.main.button(
+    View.main(styleName='divrow')
+      TextInput.main(styleName='input')
+      TouchableOpacity.main(styleName='button')(
         color="#dedede"
       )
         FontAwesomeIcon(
@@ -30,58 +30,58 @@ const ShopSidebar = prop => {
 
   const category = pug`
     View
-      View.main.category
-        Text.main.text Accessories
-        Text.main.text 4
-      View.main.category
-        Text.main.text Book
-        Text.main.text 9
-      View.main.category
-        Text.main.text Clothing
-        Text.main.text 5
-      View.main.category
-        Text.main.text Homelife
-        Text.main.text 3
-      View.main.category
-        Text.main.text Kids & Baby
-        Text.main.text 4
+      View.main(styleName='category')
+        Text.main(styleName='text') Accessories
+        Text.main(styleName='text') 4
+      View.main(styleName='category')
+        Text.main(styleName='text') Book
+        Text.main(styleName='text') 9
+      View.main(styleName='category')
+        Text.main(styleName='text') Clothing
+        Text.main(styleName='text') 5
+      View.main(styleName='category')
+        Text.main(styleName='text') Homelife
+        Text.main(styleName='text') 3
+      View.main(styleName='category')
+        Text.main(styleName='text') Kids & Baby
+        Text.main(styleName='text') 4
   `;
 
   const color = pug`
-    View.main.color
-      View.main.circlecolor.red
-      View.main.circlecolor.pink
-      View.main.circlecolor.blue
-      View.main.circlecolor.sky
-      View.main.circlecolor.green
-      View.main.circlecolor.purple
+    View.main(styleName='color')
+      View.main(styleName='circlecolor red')
+      View.main(styleName='circlecolor pink')
+      View.main(styleName='circlecolor blue')
+      View.main(styleName='circlecolor sky')
+      View.main(styleName='circlecolor green')
+      View.main(styleName='circlecolor purple')
   `;
 
   const size = pug`
-    View.main.size
-      Text.main.text XL
-      Text.main.text M
-      Text.main.text L
-      Text.main.text ML
-      Text.main.text LM
+    View.main(styleName='size')
+      Text.main(styleName='text') XL
+      Text.main(styleName='text') M
+      Text.main(styleName='text') L
+      Text.main(styleName='text') ML
+      Text.main(styleName='text') LM
   `;
 
   return pug`
-    View.main.div
+    View.main(styleName='div')
       View
-        Sidewidget.main.sidebar-widget(
+        Sidewidget.main(styleName='sidebar-widget')(
           text="Search Products"
           data=searchbar
         )
-        Sidewidget.main.sidebar-widget(
+        Sidewidget.main(styleName='sidebar-widget')(
           text="Categories"
           data=category
         )
-        Sidewidget.main.sidebar-widget(
+        Sidewidget.main(styleName='sidebar-widget')(
           text="color"
           data=color
         )
-        Sidewidget.main.sidebar-widget(
+        Sidewidget.main(styleName='sidebar-widget')(
           text="size"
           data=size 
         )

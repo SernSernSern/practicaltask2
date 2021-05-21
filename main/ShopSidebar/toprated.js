@@ -20,16 +20,16 @@ const Toprated = param => {
   return pug`
     View
       each val in data
-        View.toprated.row
-          Image.toprated.image(
+        View.toprated(styleName='row')
+          Image.toprated(styleName='image')(
             source={uri: base + val.pic}
           )
-          View.toprated.column
-            Text.toprated.title=val.title
+          View.toprated(styleName='column')
+            Text.toprated(styleName='title')=val.title
             Stardiv(
               num=val.value
             )
-            Text.toprated.coast=val.coast
+            Text.toprated(styleName='coast')=val.coast
                 
   `   
 }

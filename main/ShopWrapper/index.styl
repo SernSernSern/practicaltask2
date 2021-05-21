@@ -5,14 +5,6 @@
       width 80%
       float left
       padding-left 6u
-    +desktop()
-      width 80% 
-      float left
-      padding-left 6u
-    +wide()
-      width 80%
-      float left
-      padding-left 6u
   &.shopbar
     padding-bottom 6u  
     +desktop()
@@ -26,7 +18,7 @@
   &.shopfound
     text-align left
     flex-direction row 
-    +desktop()
+    +tablet()
       margin-left 2u
   &.selector
     flex-direction row
@@ -40,7 +32,7 @@
       flex-wrap wrap
       flex-direction row
   &.filtertab
-    +desktop()
+    +tablet()
       align-self center
       margin-left 50% 
       
@@ -62,7 +54,6 @@
     padding-right 1u
   &.single
     margin-top 4u
-    position relative
   &.cardimage
     width 35u
     height 42u
@@ -72,7 +63,6 @@
     justify-content space-between
   &.prodcard
     padding-bottom 1u
-    position relative
   &.text
     color #5d5d5d
     font(m)

@@ -11,55 +11,55 @@ const Footer = prop => {
   const base = BASE_URL
 
   return pug`
-    View.footer.area
-      View.footer.container
-        View.footer.column
+    View.footer(styleName='area')
+      View.footer(styleName='container')
+        View.footer(styleName='column')
           View
-            View.footer.widget
-              Text.footer.text 20 Years Experience
-              View.footer.row
-                TouchableOpacity.footer.button
+            View.footer(styleName='widget')
+              Text.footer(styleName='text') 20 Years Experience
+              View.footer(styleName='row')
+                TouchableOpacity.footer(styleName='button')
                   FontAwesomeIcon(
                     icon=faDeaf
                     size=17
                   )  
-                TouchableOpacity.footer.button
+                TouchableOpacity.footer(styleName='button')
                   FontAwesomeIcon(
                     icon=faDeaf
                     size=17
                   )  
-                TouchableOpacity.footer.button
+                TouchableOpacity.footer(styleName='button')
                   FontAwesomeIcon(
                     icon=faDeaf
                     size=17
                   )  
-                TouchableOpacity.footer.button
+                TouchableOpacity.footer(styleName='button')
                   FontAwesomeIcon(
                     icon=faDeaf
                     size=17
                   )  
-        View.footer.column
+        View.footer(styleName='column')
           View
             View
-              View.footer.logo
+              View.footer(styleName='logo')
                 View
-                  Image.footer.image(
+                  Image.footer(styleName='image')(
                     source={uri: base + url}
                   )
-              View.footer.nav
-                Text.footer.text.footpadding home
-                Text.footer.text.footpadding about us
-                Text.footer.text.footpadding shop
-                Text.footer.text.footpadding blog
-                Text.footer.text.footpadding pages 
-              Text.footer.text.center Copyright © neha 2018 . All Right Reserved.
-        View.footer.column
+              View.footer(styleName='nav')
+                Text.footer(styleName='text footpadding') home
+                Text.footer(styleName='text footpadding') about us
+                Text.footer(styleName='text footpadding') shop
+                Text.footer(styleName='text footpadding') blog
+                Text.footer(styleName='text footpadding') pages 
+              Text.footer(styleName='text center') Copyright © neha 2018 . All Right Reserved.
+        View.footer(styleName='column')
           View
-            View.footer.widget
+            View.footer(styleName='widget')
               View
-                Text.footer.text Phone : +012 345 678 102
-                Text.footer.text Email : info@example.com
-                Text.footer.text Address : Dhaka Bangladesh
+                Text.footer(styleName='text') Phone : +012 345 678 102
+                Text.footer(styleName='text') Email : info@example.com
+                Text.footer(styleName='text') Address : Dhaka Bangladesh
   `
 }
 

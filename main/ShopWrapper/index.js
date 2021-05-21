@@ -14,15 +14,15 @@ const ShopWrapper = prop => {
   const base = BASE_URL
 
   return pug`
-    View.view.div
-      View.view.shopbar
-        View.view.shopfoundselect
-          View.view.shopfound
-            Text.view.text 23 
-            Text.view.text Product Found of 
-            Text.view.text 50 
-          View.view.selector
-            Text.view.text Sort By : 
+    View.view(styleName='div')
+      View.view(styleName='shopbar')
+        View.view(styleName='shopfoundselect')
+          View.view(styleName='shopfound')
+            Text.view(styleName='text') 23 
+            Text.view(styleName='text') Product Found of 
+            Text.view(styleName='text') 50 
+          View.view(styleName='selector')
+            Text.view(styleName='text') Sort By : 
             Picker
               Picker.Item(
                 label="Default"
@@ -36,8 +36,8 @@ const ShopWrapper = prop => {
               Picker.Item(
                 label="In stock"
               )
-        View.view.filtertab
-          View.view.shoptabnav
+        View.view(styleName='filtertab')
+          View.view(styleName='shoptabnav')
             TouchableOpacity
               FontAwesomeIcon(
                 icon=faGripLines

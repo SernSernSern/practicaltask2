@@ -9,7 +9,7 @@ const Stardiv = (num) => {
   return pug`
     - var n = 1
     - var k = num
-    View.stardiv.di
+    View.stardiv.div
       while n <= 5
         if n <= k.num
           FontAwesomeIcon.stardiv.starright(

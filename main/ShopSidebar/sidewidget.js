@@ -6,8 +6,8 @@ import './index.styl'
 const Sidewidget = ({text, data}) => {
 
   return pug`
-    View.side-widget.d
-      Text.side-widget.text=text
+    View.side-widget(styleName='div')
+      Text.side-widget(styleName='text')=text
       View=data
   `
 }
