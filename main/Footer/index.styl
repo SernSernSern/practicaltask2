@@ -1,63 +1,104 @@
-.footer
-  &.area
-    padding-bottom 6u
-    padding-top 6u
-    background #f5f5f5
-    +tablet()
-      padding-top 8u
-      padding-bottom 8u
-    +desktop()
-      padding-top 12u
-      padding-bottom 12u
-    +wide()
-      padding-top 16u
-      padding-bottom 16u
-  &.container
-    width 100%
-    padding-right 2u
-    padding-left 2u
-    +desktop()
-      flex-direction row
-      justify-content center
-  &.column
+.root
+  padding-bottom 6u
+  padding-top 6u
+  width 100%
+  padding-right 2u
+  padding-left 2u
+  background #f5f5f5
+  +tablet()
+    padding-top 8u
+    padding-bottom 8u
+    flex-direction row
     justify-content center
-    padding-right 8u
-    padding-left 8u   
-    
-  &.widget
-    text-align center
+  +desktop()
+    padding-top 12u
+    padding-bottom 12u
+  +wide()
+    padding-top 16u
+    padding-bottom 16u
+
+.column
+  justify-content center
+  padding-right 8u
+  padding-left 8u   
+  text-align center
+  margin-top 4u    
+
+.logo
+  align-items center
+  +desktop()
     margin-top 4u
-  &.logo
     align-items center
-    +desktop()
-      margin-top 4u
-      align-items center
-  &.nav
-    flex-direction row
-    justify-content center
-    +desktop()
-      margin-top 2u
-      padding-bottom 2u
-  &.row
-    flex-direction row
-    justify-content center
-  &.image
-    width 116px
-    height 31px
-  &.text
-    font(l)
+.nav
+  flex-direction row
+  justify-content center
+  +desktop()
     margin-top 2u
-    color #585858
-    font-family 'sans-serif'
-  &.button
-    border 1px solid #3f3f3f
-    radius(circle)
-    width 4u
-    height 4u
-    align-items center
-    justify-content center
-    margin-left 2u
-  &.footpadding
-    padding 0 2u
-  &.center
-    text-align center
+    padding-bottom 2u
+.iconRow
+  margin-top 2u
+  flex-direction row
+  justify-content center
+.image
+  width 116px
+  height 31px
+
+.icon
+  border 1px solid #3f3f3f
+  radius(circle)
+  width 4u
+  height 4u
+  align-items center
+  justify-content center
+  margin-left 2u
+  &.first
+    margin-left 0u
+
+.button
+  margin-left 2u
+
+.buttonText
+  font(l)
+  margin-top 2u
+  font-weight 700
+  color #585858
+
+.copyright
+  font(l)
+  margin-top 2u
+  color #585858
+  text-align center
+
+.adressTitle
+  font(l)
+  margin-top 2u
+  font-weight 600
+  color #585858
+
+.adressDescription
+  font(m)
+  margin-top 2u
+  color #585858
+
+.adressRow
+  flex-direction row
+  justify-content center
+
+.adressItem
+  justify-content center
+  padding-right 8u
+  padding-left 8u   
+  text-align center
+  margin-top 4u
+
+.navItem
+  justify-content center
+  padding-right 6u
+  padding-left 6u   
+  text-align center
+  margin-top 4u
+
+.iconTitle
+  font(xl)
+  margin-top 2u
+  color #585858

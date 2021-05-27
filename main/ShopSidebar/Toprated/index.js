@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import Stardiv from './stardiv'
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import Stardiv from '../Stardiv'
 import { BASE_URL } from '@env'
 import './index.styl'
 
@@ -13,23 +13,24 @@ const data = [
 
 ]
 
-const Toprated = param => {
+const Toprated = () => {
 
   const base = BASE_URL
 
-  return pug`
-    View
-      each val in data
-        View.toprated(styleName='row')
-          Image.toprated(styleName='image')(
+  return pug` 
+    each val in data
+      View.root
+        TouchableOpacity
+          Image.image(
             source={uri: base + val.pic}
           )
-          View.toprated(styleName='column')
-            Text.toprated(styleName='title')=val.title
-            Stardiv(
-              num=val.value
-            )
-            Text.toprated(styleName='coast')=val.coast
+        View.column
+          TouchableOpacity
+            Text.title=val.title
+          Stardiv(
+            num=val.value
+          )
+          Text.coast=val.coast
                 
   `   
 }

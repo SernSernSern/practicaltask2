@@ -1,72 +1,58 @@
-.view
-  &.div
-    width 100%
-    +tablet()
-      width 80%
-      float left
-      padding-left 6u
-  &.shopbar
-    padding-bottom 6u  
-    +desktop()
-      padding-bottom 8u
-      flex-direction row
-  &.shopfoundselect
-    text-align center   
-    +desktop() 
-      flex-direction row
+.root
+  width 100%
+  +tablet()
+    width 80%
+    float left
+    padding-left 6u
+
+.shopbar
+  padding-bottom 6u 
+  +desktop()
+    padding-bottom 8u
+    flex-direction row
+
+.shopfoundselect
+  text-align center   
+  +desktop() 
+    flex-direction row
  
-  &.shopfound
-    text-align left
-    flex-direction row 
-    +tablet()
-      margin-left 2u
-  &.selector
-    flex-direction row
-    +tablet()
-      margin-left 6u
-    +desktop()
-      margin-left 8u
-    +wide()
-      margin-left 12u
-  &.shoptabnav
-      flex-wrap wrap
-      flex-direction row
-  &.filtertab
-    +tablet()
-      align-self center
-      margin-left 50% 
-      
-  &.text
-    color #6c6c6c
-    font(xl)
-    font-weight 600
-    margin 0
-    font-family sans-serif
-    
-.product
-  &.cards
-    flex-direction row
-    flex-wrap wrap
+.shopfound
+  text-align left
+  flex-direction row 
+  +tablet()
     margin-left 2u
-  &.card
-    background-color white
-    padding-left 1u
-    padding-right 1u
-  &.single
-    margin-top 4u
-  &.cardimage
-    width 35u
-    height 42u
-  &.prod
-    padding-top 2u
-    flex-direction row
-    justify-content space-between
-  &.prodcard
-    padding-bottom 1u
-  &.text
-    color #5d5d5d
-    font(m)
-    margin-top 1u
-    font-family 'sans-serif'
-    &.red
-      color #ee3333
+.selector
+  flex-direction row
+  +tablet()
+    margin-left 6u
+  +desktop()
+    margin-left 8u
+  +wide()
+    margin-left 12u
+.shoptabnav
+  flex-wrap wrap
+  flex-direction row
+  justify-content flex-end
+.filtertab
+  +tablet()
+    justify-content center
+    flex 1
+      
+.shopBarText
+  color #6c6c6c
+  font(xl)
+  font-weight 600
+  margin 0
+  font-family sans-serif
+  &.red
+    color #ff4136 
+    
+.filterButton
+  margin-left 2u
+
+.selectorText
+  color #6c6c6c
+  font(xl)
+  font-weight 600
+  margin 0
+  font-family sans-serif

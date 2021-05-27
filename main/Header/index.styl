@@ -1,30 +1,29 @@
-.header
-  &.image
-    padding-top 8u
-    padding-bottom 8u
-    +tablet()
-      padding-top 12u
-      padding-bottom 12u  
-    +desktop()
-      padding-top 26u
-      padding-bottom 26u
-    +wide()
-      padding-top 30u
-      padding-bottom 30u
-  &.div
-    padding-right 2u
-    padding-left 2u
-    +tablet()
-      margin-left 20%
-  &.text
+.root
+  padding-top 8u
+  padding-bottom 8u
+  +tablet()
+    padding-top 12u
+    padding-bottom 12u  
+  +desktop()
+    padding-top 26u
+    padding-bottom 26u
+  +wide()
+    padding-top 30u
+    padding-bottom 30u
+.head
+  padding-right 2u
+  padding-left 2u
+  +tablet()
+    margin-left 20%
+.title
+  font(xxxxl)
+  color #585858
+  font-weight bold
+  font-family 'sans-serif'
+  text-align left
+  +desktop()
     font(xxxxl)
-    color #585858
-    font-weight bold
-    font-family 'sans-serif'
-    text-align left
-    +desktop()
-      font(xxxxl)
-  &.smaltext
-    font(l)
-    font-family 'sans-serif'
-    color #585858 
+.description
+  font(l)
+  font-family 'sans-serif'
+  color #585858

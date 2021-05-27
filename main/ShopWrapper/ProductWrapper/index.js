@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import { BASE_URL } from '@env'
 import './index.styl'
 
@@ -20,29 +20,30 @@ const some = [
 ]
 
 
-const Productwrapper = param => {
+const ProductWrapper = () => {
 
   const base = BASE_URL
 
   return pug`
-    View.product(styleName='cards')
+    View.root
       each card in some
-        View.product(styleName='card')
-          View.product(styleName='single')
-            View
-              Image.product(styleName='cardimage')(
+        View.card
+          View.cardItem
+            TouchableOpacity
+              Image.cardImage(
                 source = {uri: base + card.pic}
               )
-            View.product(styleName='prod')
-              View
-                Text.product(styleName='text')=card.title
-              View
-                Text.product(styleName='text red')=card.cost
-              View.productcart
-                Text.product(styleName='text')=card.type 
+            View.prod
+              TouchableOpacity
+                Text.cardText=card.title
+              TouchableOpacity
+                Text.cardText(styleName='red')=card.cost
+              TouchableOpacity
+                View.productcart
+                  Text.cardText=card.type 
   `
 }
 
 
 
-export default Productwrapper;
+export default ProductWrapper;

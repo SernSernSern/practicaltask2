@@ -1,23 +1,31 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import { BASE_URL } from '@env'
-import './index.styl'
-import Sidewidget from './sidewidget'
+import Sidewidget from './Sidewidget'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { faGripLines } from '@fortawesome/free-solid-svg-icons'
-import Toprated from './toprated'
+import Toprated from './Toprated'
+import './index.styl'
 
-const ShopSidebar = prop => {
+const ShopSidebar = () => {
   const url = '/breadcrumb.jpg'
 
   const base = BASE_URL
+  const sizeData = ['XL', 'M', 'L', 'ML', 'LM']
+  const categoryData = [
+    {title: 'Accessories', page: '4'},
+    {title: 'Book', page: '9'},
+    {title: 'Clothing', page: '5'},
+    {title: 'Homelife', page: '3'},
+    {title: 'Kids & Baby', page: '4'}
+  ]
 
+  const colorData = ['red', 'pink', 'blue', 'sky', 'green']
 
   const searchbar = pug`
-    View.main(styleName='divrow')
-      TextInput.main(styleName='input')
-      TouchableOpacity.main(styleName='button')(
+    View.searchBarRow
+      TextInput.input
+      TouchableOpacity.button(
         color="#dedede"
       )
         FontAwesomeIcon(
@@ -29,63 +37,50 @@ const ShopSidebar = prop => {
 
 
   const category = pug`
-    View
-      View.main(styleName='category')
-        Text.main(styleName='text') Accessories
-        Text.main(styleName='text') 4
-      View.main(styleName='category')
-        Text.main(styleName='text') Book
-        Text.main(styleName='text') 9
-      View.main(styleName='category')
-        Text.main(styleName='text') Clothing
-        Text.main(styleName='text') 5
-      View.main(styleName='category')
-        Text.main(styleName='text') Homelife
-        Text.main(styleName='text') 3
-      View.main(styleName='category')
-        Text.main(styleName='text') Kids & Baby
-        Text.main(styleName='text') 4
+    each item in categoryData
+      TouchableOpacity
+        View.categoryItem
+          Text.categoryText=item.title
+          Text.categoryText=item.page
   `;
 
   const color = pug`
-    View.main(styleName='color')
-      View.main(styleName='circlecolor red')
-      View.main(styleName='circlecolor pink')
-      View.main(styleName='circlecolor blue')
-      View.main(styleName='circlecolor sky')
-      View.main(styleName='circlecolor green')
-      View.main(styleName='circlecolor purple')
+    View.colorItem
+      each item in colorData
+        TouchableOpacity
+          View.circleColor(styleName=item)
   `;
 
   const size = pug`
-    View.main(styleName='size')
-      Text.main(styleName='text') XL
-      Text.main(styleName='text') M
-      Text.main(styleName='text') L
-      Text.main(styleName='text') ML
-      Text.main(styleName='text') LM
+    View.sizeItem
+      each item in sizeData
+        TouchableOpacity
+          Text.sizeText=item
   `;
 
   return pug`
-    View.main(styleName='div')
-      View
-        Sidewidget.main(styleName='sidebar-widget')(
-          text="Search Products"
-          data=searchbar
-        )
-        Sidewidget.main(styleName='sidebar-widget')(
-          text="Categories"
-          data=category
-        )
-        Sidewidget.main(styleName='sidebar-widget')(
-          text="color"
-          data=color
-        )
-        Sidewidget.main(styleName='sidebar-widget')(
-          text="size"
-          data=size 
-        )
-        Toprated
+    View.root
+      Sidewidget(
+        text="Search Products"
+        data=searchbar
+      )
+      Sidewidget(
+        text="Categories"
+        data=category
+      )
+      Sidewidget(
+        text="color"
+        data=color
+      )
+      Sidewidget(
+        text="size"
+        data=size 
+      )
+      Sidewidget(
+        text="Top rated product"
+      )
+      Toprated
+      
   `
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
 import { BASE_URL } from '@env'
-import './index.styl'
 import ShopSidebar from '../ShopSidebar'
 import ShopWrapper from '../ShopWrapper'
+import './index.styl'
 
 const Main = prop => {
   const url = '/breadcrumb.jpg'
@@ -11,7 +11,7 @@ const Main = prop => {
   const base = BASE_URL
 
   return pug`
-    View.div
+    View.root
       ShopSidebar
       ShopWrapper
   `
