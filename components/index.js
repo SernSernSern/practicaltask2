@@ -1,1 +1,5 @@
-export { default as TestComponent } from './TestComponent'
+export { default as Main } from './Main'
+export { default as ShopWrapper } from './ShopWrapper'
+export { default as ShopSidebar } from './ShopSidebar'
+export { default as Footer } from './Footer'
+export { default as Header } from './Header'

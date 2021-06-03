@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faGripLines } from '@fortawesome/free-solid-svg-icons'
 import './index.styl'
 
-const ShopWrapper = () => {
+export default( function ShopWrapper() {
   const url = '/breadcrumb.jpg'
 
   const base = BASE_URL
@@ -48,7 +48,4 @@ const ShopWrapper = () => {
       ProductWrapper
   `
 
-}
-
-
-export default ShopWrapper;
+})

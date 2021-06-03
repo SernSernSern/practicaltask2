@@ -18,8 +18,8 @@ const Toprated = () => {
   const base = BASE_URL
 
   return pug` 
-    each val in data
-      View.root
+    each val, index in data
+      View.root(key=index)
         TouchableOpacity
           Image.image(
             source={uri: base + val.pic}

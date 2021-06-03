@@ -5,12 +5,13 @@ import { faDeaf } from "@fortawesome/free-solid-svg-icons"
 import { BASE_URL } from '@env'
 import './index.styl'
 
-const Footer = prop => {
+export default( function Footer(){
 
   const url = '/logo.png'
   const base = BASE_URL
 
   const icons = [faDeaf, faDeaf, faDeaf, faDeaf]
+  const buttonNames = ['home', 'about us', 'blog', 'pages']
 
   return pug`
     View.root
@@ -19,7 +20,7 @@ const Footer = prop => {
           Text.iconTitle 20 Years Experience
           View.iconRow
             each item, index in icons
-              TouchableOpacity.icon(styleName={first:!index})
+              TouchableOpacity.icon(key=index styleName={first:!index})
                 FontAwesomeIcon(
                   icon=item
                   size=17
@@ -30,16 +31,9 @@ const Footer = prop => {
               source={uri: base + url}
             )
           View.nav
-            TouchableOpacity
-              Text.buttonText home
-            TouchableOpacity.button
-              Text.buttonText about us
-            TouchableOpacity.button
-              Text.buttonText shop
-            TouchableOpacity.button
-              Text.buttonText blog
-            TouchableOpacity.button
-              Text.buttonText pages 
+            each button, index in buttonNames
+              TouchableOpacity(key=index)
+                Text.buttonText(styleName={first:!index})=button
           Text.copyright Copyright © neha 2018 . All Right Reserved.
       View.adressItem
         View.adressRow
@@ -52,7 +46,6 @@ const Footer = prop => {
           Text.adressTitle Address :
           Text.adressDescription Dhaka Bangladesh
   `
-}
+})
 
 
-export default Footer;

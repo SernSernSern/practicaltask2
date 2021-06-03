@@ -26,8 +26,8 @@ const ProductWrapper = () => {
 
   return pug`
     View.root
-      each card in some
-        View.card
+      each card, index in some
+        View.card(key=index)
           View.cardItem
             TouchableOpacity
               Image.cardImage(

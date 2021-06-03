@@ -3,7 +3,7 @@ import {View, ImageBackground, Text} from 'react-native';
 import { BASE_URL } from '@env'
 import './index.styl'
 
-const Header = prop => {
+export default( function Header (){
   const url = '/breadcrumb.jpg'
 
   const base = BASE_URL
@@ -16,7 +16,5 @@ const Header = prop => {
         Text.title Shop
         Text.description HOME / SHOP  
   `
-}
+})
 
-
-export default Header;

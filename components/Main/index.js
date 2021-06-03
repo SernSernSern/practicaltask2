@@ -1,11 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
 import { BASE_URL } from '@env'
-import ShopSidebar from '../ShopSidebar'
-import ShopWrapper from '../ShopWrapper'
+import { ShopSidebar, ShopWrapper } from 'components'
 import './index.styl'
 
-const Main = prop => {
+export default( function Main () {
   const url = '/breadcrumb.jpg'
 
   const base = BASE_URL
@@ -16,7 +15,4 @@ const Main = prop => {
       ShopWrapper
   `
 
-}
-
-
-export default Main;
+})

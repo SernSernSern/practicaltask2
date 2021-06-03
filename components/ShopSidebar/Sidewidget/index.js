@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 import './index.styl'
 
 
-const Sidewidget = ({text, data}) => {
+const Sidewidget = ({text, data, first}) => {
 
   return pug`
-    View.root
+    View.root(styleName={first:first})
       Text.sideWidgetText=text
       View.content=data
   `

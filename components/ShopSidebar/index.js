@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Toprated from './Toprated'
 import './index.styl'
 
-const ShopSidebar = () => {
+export default( function ShopSidebar() {
   const url = '/breadcrumb.jpg'
 
   const base = BASE_URL
@@ -20,7 +20,7 @@ const ShopSidebar = () => {
     {title: 'Kids & Baby', page: '4'}
   ]
 
-  const colorData = ['red', 'pink', 'blue', 'sky', 'green']
+  const colorData = ['#ff4136', '#3649ff', '#ff01f0', '#00c0ff', '#00ffae', '#8a00ff']
 
   const searchbar = pug`
     View.searchBarRow
@@ -35,10 +35,20 @@ const ShopSidebar = () => {
         )   
   `;
 
+  const filterByPrice = pug`
+    View.priceFilter
+      View.sliderRange
+        TouchableOpacity.sliderLeft
+        TouchableOpacity.sliderMain 
+        TouchableOpacity.sliredRight
+      View.priceSliderAmount
+        Text.priceSliderText Price : $20 - $100
+        Text.priceSliderText Filter
+  `
 
   const category = pug`
-    each item in categoryData
-      TouchableOpacity
+    each item, index in categoryData
+      TouchableOpacity(key=index)
         View.categoryItem
           Text.categoryText=item.title
           Text.categoryText=item.page
@@ -46,16 +56,19 @@ const ShopSidebar = () => {
 
   const color = pug`
     View.colorItem
-      each item in colorData
-        TouchableOpacity
-          View.circleColor(styleName=item)
+      each item, index in colorData
+        TouchableOpacity(key=index)
+          View.circleColor(
+            styleName={first:!index}
+            style={backgroundColor: item} 
+          )
   `;
 
   const size = pug`
     View.sizeItem
-      each item in sizeData
-        TouchableOpacity
-          Text.sizeText=item
+      each item, index in sizeData
+        TouchableOpacity(key=index)
+          Text.sizeText(styleName={first:!index})=item
   `;
 
   return pug`
@@ -63,6 +76,11 @@ const ShopSidebar = () => {
       Sidewidget(
         text="Search Products"
         data=searchbar
+        first=true
+      )
+      Sidewidget(
+        text="Filter"
+        data=filterByPrice
       )
       Sidewidget(
         text="Categories"
@@ -82,9 +100,4 @@ const ShopSidebar = () => {
       Toprated
       
   `
-}
-
-
-
-
-export default ShopSidebar;
+})
